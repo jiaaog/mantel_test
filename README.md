@@ -1,26 +1,25 @@
-# mantel_test
+# Mantel Test
 ## Mentel permutation test
 <a href="https://mb3is.megx.net/gustame/hypothesis-tests/the-mantel-test">Mantel Test</a> is a commonly used non-parametric test for testing the existence of spatial correlation between corresponding positions of two (dis)similarity or distance matrices (Mantel, 1967).<br>
 <br>
 There are different kinds of Mantel test (for exmaple, simple and partial Mantel test). The aim of this repository is to share the *Simple Mantel Test - Python script tool* that I created. It is used in ArcGIS Desktops (e.g. ArcMap, ArcCatalog, etc.) to find out the Mantel statistics and significance between two distance or dissimilarity matrices. Currently it will work (I hope) for any feature or shapefile that contain valid and comparable fields, constructing matrices from the fields’ value, and return a neat report for correlation significance.<br>
 <br>
 ## Null Hypothesis
-The Null hypothesis of simple Mantel test (H0) can be viewed as: <br>
-> ‘H0: The distances among objects in matrix DY are not (linearly or monotonically) related to the corresponding distances in DX’ (Legendre & Legendre 2012, p. 600)
+The Null hypothesis (H0) of simple Mantel test can be viewed as: <br>
+> ‘The distances among objects in matrix DY are not (linearly or monotonically) related to the corresponding distances in DX’ (Legendre & Legendre 2012, p. 600)
 <br>
 Similar Null hypothesis can be found in Legendre (2000, p. 41) and in Legendre & Fortin (2010, p. 835):<br> 
 <br>
-> ‘The simple Mantel test is a procedure to test the hypothesis that the distances among objects in a *distance* matrix A are linearly independent of the distances among the same objects in another *distance* matrix B’.
-<br>
+> ‘The simple Mantel test is a procedure to test the hypothesis that the distances among objects in a distance matrix A are linearly independent of the distances among the same objects in another distance matrix B’.<br>
+
 ## So what the heck is a Mantel Test
-</br>
-In simple words, the idea underlying Mantel's Test is that <em>if there is a relationship between two matrices, the sum of products (**M value**) of these two matrices will be relatively very high (positive relation) or very low (negative relation)</em>. And a random Monte Carlo simulation of rows and columns for one of the matrix will change the sum of products (**M value**) of these two matrices. Thus if such random simulation (permutation of row and column of one matrix) was applied for 10000 times (or any user-defined times>1000), a distribution of M values will be shown. Then we could see if the p-value from the number of m-values that are equal or greater (or equal or less) than the original M value, and conclude that if there is a significant correlation between two matrices.<br>
+In simple words, the idea underlying Mantel's Test is that <em>if there is a relationship between two matrices, the sum of products (M value) of these two matrices will be relatively very high (positive relation) or very low (negative relation)</em>. And a random Monte Carlo simulation of rows and columns for one of the matrix will change the sum of products (M value) of these two matrices. Thus if such random simulation (permutation of row and column of one matrix) was applied for 10000 times (or any user-defined times>1000), a distribution of M values will be shown. Then we could see if the p-value from the number of m-values that are equal or greater (or equal or less) than the original M value, and conclude that if there is a significant correlation between two matrices.<br>
 <br>
 The equation for calculating M value is detailed demonstrated in Giraldo et al. (2016). Firstly, say we have a dissimilarity matrix C and geographic distances matrix D:<br>
 ![Matrices](https://user-images.githubusercontent.com/41793727/80041256-328ae100-84b9-11ea-8574-7ddcf8db0b73.png?raw=true)<br>
-where c<em>ij</em> is the <em>i</em>th element of column <em>j</em> in the dissimilarity matrix C, and d*<em>ij</em> is the ith element in column <em>j</em> in the geographic distance matrix D. After the <em>N</em> times of permutation, we could compare the new **M value** with the original **M value**, and see how many of the new **M values** are equal or greater (or equal or smaller) than the original **M value**. The <em>p</em> value is, therefore, calculated in the way that:
+where c<em>ij</em> is the <em>i</em>th element of column <em>j</em> in the dissimilarity matrix C, and d*<em>ij</em> is the ith element in column <em>j</em> in the geographic distance matrix D. After the <em>N</em> times of permutation, we could compare the new M value with the original M value, and see how many of the new M values are equal or greater (or equal or smaller) than the original M value. The <em>p</em> value is, therefore, calculated in the way that:
 <div align="center"> <em>p</em> value = (1+<em>n</em>)/(1+N)</div><br>
-where <em>n</em> is the number of randomized new **M values** equal to or above (or equal to or below) the original, observed **M value**, <em>N</em> is the number of times of permutations<br>
+where <em>n</em> is the number of randomized new M values equal to or above (or equal to or below) the original, observed M value, <em>N</em> is the number of times of permutations<br>
 <br>
 Pearson’s <em>r</em> in Mantel test is conducted as the normal regression <em>r</em> correlation test. However, it’s the unfolded version of matrices (and it’s different from the original array of attributes). It can be calculated in the way that:<br>
 ![pearson r](https://user-images.githubusercontent.com/41793727/80042246-c067cb80-84bb-11ea-8d1e-b76e824a2833.gif?raw=true)<br>
