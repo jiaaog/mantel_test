@@ -23,7 +23,7 @@ from scipy.spatial import distance
 import pandas as pd
 
 #1 Set the route for the feature or shapefile
-df = pd.read_csv("D:/Geo567/project/scripts/January_precipitation.csv")
+df = pd.read_csv("C://January_precipitation.csv")
 density = df.P
 pointx = df.Lat
 pointy = df.Long
