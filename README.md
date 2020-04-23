@@ -33,29 +33,29 @@ The result of this script tool is validated with <em>R</em> packages such as [ad
 ## Examples
 ### Case A - Distance Matrices
 We have the data for [12 air quality monitoring facilities in Greater Toronto and Hamilton Area](https://open.canada.ca/data/en/dataset/881a606b-69e0-473f-841d-aec9e2815e58) (Figure 1). Data can be downloaded [here](https://github.com/jiaaog/mantel_test/blob/master/dataset.gdb.zip). We want to find out if the average PM 2.5 concentration in 2013 is spatially correlated with their geographic locations, we could run the the Mantel Test script tool [Toolbax](https://github.com/jiaaog/mantel_test/blob/master/ArcGIS_Toolbox.zip).<br>
-<div align="center">![ AQI facilities](https://user-images.githubusercontent.com/41793727/80042736-efcb0800-84bc-11ea-878a-593e2d2c864d.png)</div><br>
+![ AQI facilities](https://user-images.githubusercontent.com/41793727/80042736-efcb0800-84bc-11ea-878a-593e2d2c864d.png)<br>
 <div align="center">Figure 1: AQI monitoring facilities</div><br>
 Firstly, the user may need to check the attribute table of the feature to see the corresponding names of fields (Figure 2). <br>
-<div align="center">![ attribute table 1](https://user-images.githubusercontent.com/41793727/80042735-ef327180-84bc-11ea-9cc7-dd222b3b1320.png)</div><br>Attribute table in ArcGISGUI of the script too</div><br>
+![ attribute table 1](https://user-images.githubusercontent.com/41793727/80042735-ef327180-84bc-11ea-9cc7-dd222b3b1320.png)</div><br>Attribute table in ArcGISGUI of the script too<br>
 In this case, three attributes are useful to us: “Longitude”, “Latitude”, and “Average_Fine_PM_2013”. Then it can be done as Figure 3:<br>
-<div align="center">![ gui of mantel test](https://user-images.githubusercontent.com/41793727/80042738-f0639e80-84bc-11ea-894e-47d91bb80828.png)</div><br>
+![ gui of mantel test](https://user-images.githubusercontent.com/41793727/80042738-f0639e80-84bc-11ea-894e-47d91bb80828.png)<br>
 <div align="center">Figure 3: Input GUI of Case A</div><br>
 After all the parameter is set, click “OK” to run MTST. The result will be like a message window similar to Figure 4. If the p-value is very small (e.g. 0.016), we would be confident that there is correlation between two matrices (at significance level of 0.05, or 95% confident). Whether such correlation is positive or native, depends on the sign of Pearson’s r value.
-<div align="center">![gui of mantel test](https://user-images.githubusercontent.com/41793727/80042828-4a646400-84bd-11ea-8ace-475e2fa64bf8.png)</div><br>
+![gui of mantel test](https://user-images.githubusercontent.com/41793727/80042828-4a646400-84bd-11ea-8ace-475e2fa64bf8.png)<br>
 <div align="center">Figure 4: Result messages</div><br>
 
-### Case B - Dissimilarity Matrices###
+### Case B - Dissimilarity Matrices
 We have the data for the soil properties in Calgary and surrounding areas (Figure 5). Say if we want to compare correlation between soil pH value and the soil organic carbon percentage as two fields in the data (Figure 6). In this case, we don’t have the x-y coordinate information. However, Mantel test can still test the absolute distance between two datasets by constructing dissimilarity matrices. The matrices will calculate the absolute different between pairwise points.
-<div align="center">![soil calgary area](https://user-images.githubusercontent.com/41793727/80042733-ef327180-84bc-11ea-94b8-5042bd7b0a40.png)</div><br>
+![soil calgary area](https://user-images.githubusercontent.com/41793727/80042733-ef327180-84bc-11ea-94b8-5042bd7b0a40.png)<br>
 <div align="center">Figure 5: Soil properties in Calgary and surrounding areas. “PH2” is the field name of pH value,
 “ORGCARB” is the field name of soil organic carbon percentage (%) in relative to weight.</div><br>
-<div align="center">![attribute table 2](https://user-images.githubusercontent.com/41793727/80042732-ee99db00-84bc-11ea-8a83-a63ce7db3344.png)</div><br>
-<div align="center">Figure 6. Calgary and surrounding soil properties attribute table.</div><br>
+![attribute table 2](https://user-images.githubusercontent.com/41793727/80042732-ee99db00-84bc-11ea-8a83-a63ce7db3344.png)</div><br>
+<div align="center">Figure 6. Calgary and surrounding soil properties attribute table.<br>
 To do so, it’s quite similar as the process in Case A, but with the *xy* coordinate information box unchecked (Figure 7). The final message section will be in the same format as Case 1.<br>
-<div align="center">![GUI Case B](https://user-images.githubusercontent.com/41793727/80042737-efcb0800-84bc-11ea-8152-6dba257bf918.png)</div><br>
+![GUI Case B](https://user-images.githubusercontent.com/41793727/80042737-efcb0800-84bc-11ea-8152-6dba257bf918.png)<br>
 <div align="center">Figure 7. Input GUI of Case B</div><br>
 
-## Limitations##
+## Limitations
 There are also some limitation of Mantel test that user should be aware.
 1. The interdependence between distance matrices may result lousy permutation result. For example, Calgary is 3000 km away from Montreal, Montreal is 500 km way from Toronto. These two distance relationships limit the location of Toronto in relative to Calgary (3000km ±500km).
 2. If matrices size are too small (e.g. two 5 by 5 matrices), the accuracy is also limited. This is because the permutation will be simply repetitions for the same matrix.
@@ -66,10 +66,10 @@ There are also some limitation of Mantel test that user should be aware.
 <br>
 For more detailed significance and whether should Mantel Test should be used, you can find it in Legendre <em>et al</em> (2015).
 
-## Stand-alone script for Mantel Test##
+## Stand-alone script for Mantel Test
 The codes for ArcGIS Desktop script tool can be found [here](https://github.com/jiaaog/mantel_test/blob/master/script_tool.py). However, if you want to try, there is also a [stand-alone script](https://github.com/jiaaog/mantel_test/blob/master/stand_alone_script.py).<br>
 
-## References##
+## References
 Mantel, N. (1967). The detection of disease clustering and a generalized regression approach. *Cancer research*, 27(2 Part 1), 209-220.<br>
 Giraldo, R., Caballero, W., & Camacho-Tamayo, J. (2018). Mantel test for spatial functional data. *AStA Advances in Statistical Analysis*, 102(1), 21-39.<br>
 Legendre, P., & Legendre, L. (2012). Numerical ecology, 3rd English edn Amsterdam. <em>The Netherlands: Elsevier Science BV</em>.<br>
