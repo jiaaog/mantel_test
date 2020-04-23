@@ -10,7 +10,7 @@ The Null hypothesis (H0) of simple Mantel test can be viewed as: <br>
 <br>
 Similar Null hypothesis can be found in Legendre (2000, p. 41) and in Legendre & Fortin (2010, p. 835):<br> 
 <br>
->> "The simple Mantel test is a procedure to test the hypothesis that the distances among objects in a distance matrix A are linearly independent of the distances among the same objects in another distance matrix B".<br>
+> "The simple Mantel test is a procedure to test the hypothesis that the distances among objects in a distance matrix A are linearly independent of the distances among the same objects in another distance matrix B".<br>
 
 ## So what the heck is a Mantel Test
 In simple words, the idea underlying Mantel's Test is that <em>if there is a relationship between two matrices, the sum of products (M value) of these two matrices will be relatively very high (positive relation) or very low (negative relation)</em>. And a random Monte Carlo simulation of rows and columns for one of the matrix will change the sum of products (M value) of these two matrices. Thus if such random simulation (permutation of row and column of one matrix) was applied for 10000 times (or any user-defined times>1000), a distribution of M values will be shown. Then we could see if the p-value from the number of m-values that are equal or greater (or equal or less) than the original M value, and conclude that if there is a significant correlation between two matrices.<br>
