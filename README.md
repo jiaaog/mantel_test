@@ -50,7 +50,7 @@ We have the data for the soil properties in Calgary and surrounding areas (Figur
 ![soil calgary area](https://user-images.githubusercontent.com/41793727/80042733-ef327180-84bc-11ea-94b8-5042bd7b0a40.png)<br>
 <div align="center">Figure 5: Soil properties in Calgary and surrounding areas. “PH2” is the field name of pH value, “ORGCARB” is the field name of soil organic carbon percentage (%) in relative to weight.</div><br>
 ![attribute table 2](https://user-images.githubusercontent.com/41793727/80042732-ee99db00-84bc-11ea-8a83-a63ce7db3344.png)<br>
-<div align="center">Figure 6. Calgary and surrounding soil properties attribute table.<br>
+<div align="center">Figure 6. Calgary and surrounding soil properties attribute table.</div><br>
 To do so, it’s quite similar as the process in Case A, but with the *xy* coordinate information box unchecked (Figure 7). The final message section will be in the same format as Case 1.<br>
 ![GUI Case B](https://user-images.githubusercontent.com/41793727/80042737-efcb0800-84bc-11ea-8152-6dba257bf918.png)<br>
 <div align="center">Figure 7. Input GUI of Case B</div><br>
