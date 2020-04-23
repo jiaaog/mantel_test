@@ -6,12 +6,13 @@ There are different kinds of Mantel test (for exmaple, simple and partial Mantel
 <br>
 ## Null Hypothesis
 The Null hypothesis of simple Mantel test (H0) can be viewed as: <br>
-> ‘H0: The distances among objects in matrix DY are not (linearly or monotonically) related to the corresponding distances in DX’ (Legendre & Legendre 2012, p. 600)<br>
+> ‘H0: The distances among objects in matrix DY are not (linearly or monotonically) related to the corresponding distances in DX’ (Legendre & Legendre 2012, p. 600)
 <br>
 Similar Null hypothesis can be found in Legendre (2000, p. 41) and in Legendre & Fortin (2010, p. 835):<br> 
-> ‘The simple Mantel test is a procedure to test the hypothesis that the distances among objects in a *distance* matrix A are linearly independent of the distances among the same objects in another *distance* matrix B’.<br>
+>‘The simple Mantel test is a procedure to test the hypothesis that the distances among objects in a *distance* matrix A are linearly independent of the distances among the same objects in another *distance* matrix B’.
 <br>
 ## So what the heck is a Mantel Test
+<br>
 In simple words, the idea underlying Mantel's Test is that <em>if there is a relationship between two matrices, the sum of products (**M value**) of these two matrices will be relatively very high (positive relation) or very low (negative relation)</em>. And a random Monte Carlo simulation of rows and columns for one of the matrix will change the sum of products (**M value**) of these two matrices. Thus if such random simulation (permutation of row and column of one matrix) was applied for 10000 times (or any user-defined times>1000), a distribution of M values will be shown. Then we could see if the p-value from the number of m-values that are equal or greater (or equal or less) than the original M value, and conclude that if there is a significant correlation between two matrices.<br>
 <br>
 The equation for calculating M value is detailed demonstrated in Giraldo et al. (2016). Firstly, say we have a dissimilarity matrix C and geographic distances matrix D:<br>
@@ -37,7 +38,7 @@ We have the data for [12 air quality monitoring facilities in Greater Toronto an
 <div align="center">Figure 1: AQI monitoring facilities</div><br>
 Firstly, the user may need to check the attribute table of the feature to see the corresponding names of fields (Figure 2). <br>
 ![ attribute table 1](https://user-images.githubusercontent.com/41793727/80042735-ef327180-84bc-11ea-9cc7-dd222b3b1320.png)<br>
-Attribute table in ArcGISGUI of the script too<br>
+<div align="center">Figure 2. Attribute table in ArcGISGUI of the script too</div><br>
 In this case, three attributes are useful to us: “Longitude”, “Latitude”, and “Average_Fine_PM_2013”. Then it can be done as Figure 3:<br>
 ![ gui of mantel test](https://user-images.githubusercontent.com/41793727/80042738-f0639e80-84bc-11ea-894e-47d91bb80828.png)<br>
 <div align="center">Figure 3: Input GUI of Case A</div><br>
