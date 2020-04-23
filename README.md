@@ -23,7 +23,7 @@ where c<em>ij</em> is the <em>i</em>th element of column <em>j</em> in the dissi
 where <em>n</em> is the number of randomized new M values equal to or above (or equal to or below) the original, observed M value, <em>N</em> is the number of times of permutations<br>
 <br>
 Pearson’s <em>r</em> in Mantel test is conducted as the normal regression <em>r</em> correlation test. However, it’s the unfolded version of matrices (and it’s different from the original array of attributes). It can be calculated in the way that:<br>
-![alt pearson_r](https://user-images.githubusercontent.com/41793727/80042246-c067cb80-84bb-11ea-8d1e-b76e824a2833.gif?sanitize=true)
+![pearsonr](https://user-images.githubusercontent.com/41793727/80042246-c067cb80-84bb-11ea-8d1e-b76e824a2833.gif?sanitize=true)
 <br>
 The <em>r</em> value ranges from -1 to 1. The positive <em>r</em> value indicate the positive correlation between the two matrices, and negative <em>r</em> indicates reversed correlation between two matrices. If <em>r</em> is quite close to 0 (i.e. -0.1 < r < 0.1), it indicates poor or no correlation between two matrices.<br>
 <br>
@@ -39,9 +39,11 @@ We have the data for [12 air quality monitoring facilities in Greater Toronto an
 ![ AQI facilities](https://user-images.githubusercontent.com/41793727/80042736-efcb0800-84bc-11ea-878a-593e2d2c864d.png?raw=true)<br>
 <div align="center">Figure 1: AQI monitoring facilities</div><br>
 Firstly, the user may need to check the attribute table of the feature to see the corresponding names of fields (Figure 2). <br>
-![alt attribute table 1](https://user-images.githubusercontent.com/41793727/80042735-ef327180-84bc-11ea-9cc7-dd222b3b1320.png?sanitize=true)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/41793727/80042735-ef327180-84bc-11ea-9cc7-dd222b3b1320.png" style="width:inherit" alt="gui1">
+</p>
 <br>
-<div align="center">Figure 2. Attribute table in ArcGISGUI of the script too</div><br>
+<div align="center">Figure 2. Attribute table in ArcGIS GUI of the script too</div><br>
 In this case, three attributes are useful to us: “Longitude”, “Latitude”, and “Average_Fine_PM_2013”. Then it can be done as Figure 3:<br>
 ![alt gui of mantel test](https://user-images.githubusercontent.com/41793727/80042738-f0639e80-84bc-11ea-894e-47d91bb80828.png?sanitize=true)
 <br>
