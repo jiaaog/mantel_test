@@ -1,4 +1,4 @@
-# Mantel Test in ArcGIS Desktop
+# Mantel Test (ArcPy script tool) in ArcGIS Desktop
 ## Mentel permutation test
 <a href="https://mb3is.megx.net/gustame/hypothesis-tests/the-mantel-test">Mantel Test</a> is a commonly used non-parametric test for testing the existence of spatial correlation between corresponding positions of two (dis)similarity or distance matrices (Mantel, 1967).<br>
 <br>
