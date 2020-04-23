@@ -6,11 +6,11 @@ There are different kinds of Mantel test (for exmaple, simple and partial Mantel
 <br>
 ## Null Hypothesis
 The Null hypothesis (H0) of simple Mantel test can be viewed as: <br>
-> ‘The distances among objects in matrix DY are not (linearly or monotonically) related to the corresponding distances in DX’ (Legendre & Legendre 2012, p. 600)
+> "The distances among objects in matrix DY are not (linearly or monotonically) related to the corresponding distances in DX" (Legendre & Legendre 2012, p. 600)
 <br>
 Similar Null hypothesis can be found in Legendre (2000, p. 41) and in Legendre & Fortin (2010, p. 835):<br> 
 <br>
-> ‘The simple Mantel test is a procedure to test the hypothesis that the distances among objects in a distance matrix A are linearly independent of the distances among the same objects in another distance matrix B’.<br>
+>> "The simple Mantel test is a procedure to test the hypothesis that the distances among objects in a distance matrix A are linearly independent of the distances among the same objects in another distance matrix B".<br>
 
 ## So what the heck is a Mantel Test
 In simple words, the idea underlying Mantel's Test is that <em>if there is a relationship between two matrices, the sum of products (M value) of these two matrices will be relatively very high (positive relation) or very low (negative relation)</em>. And a random Monte Carlo simulation of rows and columns for one of the matrix will change the sum of products (M value) of these two matrices. Thus if such random simulation (permutation of row and column of one matrix) was applied for 10000 times (or any user-defined times>1000), a distribution of M values will be shown. Then we could see if the p-value from the number of m-values that are equal or greater (or equal or less) than the original M value, and conclude that if there is a significant correlation between two matrices.<br>
@@ -23,7 +23,7 @@ where c<em>ij</em> is the <em>i</em>th element of column <em>j</em> in the dissi
 where <em>n</em> is the number of randomized new M values equal to or above (or equal to or below) the original, observed M value, <em>N</em> is the number of times of permutations<br>
 <br>
 Pearson’s <em>r</em> in Mantel test is conducted as the normal regression <em>r</em> correlation test. However, it’s the unfolded version of matrices (and it’s different from the original array of attributes). It can be calculated in the way that:<br>
-![pearson_r](https://user-images.githubusercontent.com/41793727/80042246-c067cb80-84bb-11ea-8d1e-b76e824a2833.gif?raw=true)
+![pearson_r](https://user-images.githubusercontent.com/41793727/80042246-c067cb80-84bb-11ea-8d1e-b76e824a2833.gif?sanitize=true)
 <br>
 The <em>r</em> value ranges from -1 to 1. The positive <em>r</em> value indicate the positive correlation between the two matrices, and negative <em>r</em> indicates reversed correlation between two matrices. If <em>r</em> is quite close to 0 (i.e. -0.1 < r < 0.1), it indicates poor or no correlation between two matrices.<br>
 <br>
@@ -39,15 +39,15 @@ We have the data for [12 air quality monitoring facilities in Greater Toronto an
 ![ AQI facilities](https://user-images.githubusercontent.com/41793727/80042736-efcb0800-84bc-11ea-878a-593e2d2c864d.png?raw=true)<br>
 <div align="center">Figure 1: AQI monitoring facilities</div><br>
 Firstly, the user may need to check the attribute table of the feature to see the corresponding names of fields (Figure 2). <br>
-![ attribute table 1](https://user-images.githubusercontent.com/41793727/80042735-ef327180-84bc-11ea-9cc7-dd222b3b1320.png?raw=true)
+![ attribute table 1](https://user-images.githubusercontent.com/41793727/80042735-ef327180-84bc-11ea-9cc7-dd222b3b1320.png?sanitize=true)
 <br>
 <div align="center">Figure 2. Attribute table in ArcGISGUI of the script too</div><br>
 In this case, three attributes are useful to us: “Longitude”, “Latitude”, and “Average_Fine_PM_2013”. Then it can be done as Figure 3:<br>
-![ gui of mantel test](https://user-images.githubusercontent.com/41793727/80042738-f0639e80-84bc-11ea-894e-47d91bb80828.png?raw=true)
+![ gui of mantel test](https://user-images.githubusercontent.com/41793727/80042738-f0639e80-84bc-11ea-894e-47d91bb80828.png?sanitize=true)
 <br>
 <div align="center">Figure 3: Input GUI of Case A</div><br>
 After all the parameter is set, click “OK” to run MTST. The result will be like a message window similar to Figure 4. If the p-value is very small (e.g. 0.016), we would be confident that there is correlation between two matrices (at significance level of 0.05, or 95% confident). Whether such correlation is positive or native, depends on the sign of Pearson’s r value.
-![gui of mantel test](https://user-images.githubusercontent.com/41793727/80042828-4a646400-84bd-11ea-8ace-475e2fa64bf8.png?raw=true)
+![gui of mantel test](https://user-images.githubusercontent.com/41793727/80042828-4a646400-84bd-11ea-8ace-475e2fa64bf8.png?sanitize=true)
 <br>
 <div align="center">Figure 4: Result messages</div><br>
 
@@ -56,11 +56,11 @@ We have the data for the soil properties in Calgary and surrounding areas (Figur
 ![soil calgary area](https://user-images.githubusercontent.com/41793727/80042733-ef327180-84bc-11ea-94b8-5042bd7b0a40.png?raw=true)
 <br>
 <div align="center">Figure 5: Soil properties in Calgary and surrounding areas. “PH2” is the field name of pH value, “ORGCARB” is the field name of soil organic carbon percentage (%) in relative to weight.</div><br>
-![attribute table 2](https://user-images.githubusercontent.com/41793727/80042732-ee99db00-84bc-11ea-8a83-a63ce7db3344.png?raw=true)
+![attribute table 2](https://user-images.githubusercontent.com/41793727/80042732-ee99db00-84bc-11ea-8a83-a63ce7db3344.png?sanitize=true)
 <br>
 <div align="center">Figure 6. Calgary and surrounding soil properties attribute table.</div><br>
 To do so, it’s quite similar as the process in Case A, but with the *xy* coordinate information box unchecked (Figure 7). The final message section will be in the same format as Case 1.<br>
-![GUI Case B](https://user-images.githubusercontent.com/41793727/80042737-efcb0800-84bc-11ea-8152-6dba257bf918.png?raw=true)
+![GUI Case B](https://user-images.githubusercontent.com/41793727/80042737-efcb0800-84bc-11ea-8152-6dba257bf918.png?sanitize=true)
 <br>
 <div align="center">Figure 7. Input GUI of Case B</div><br>
 
