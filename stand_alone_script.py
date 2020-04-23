@@ -9,7 +9,7 @@ This is a stand-alone Mantel test script that comparing correlation between
 two distance or dissimiliary matrices. It will work for any shapefile or feature
 class and contains valid,comparable attributes.
 
-It does not require the use of ArcGIS.
+It does not require the use of ArcGIS server.
 
 Outputs: A short test message stating the significance of correlation and the
 pearson's correlation between the two matrices.
